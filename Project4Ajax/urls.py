@@ -24,5 +24,6 @@ from app1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',TemplateView.as_view(template_name='showIndex.html')),
+    path('Check_User_Name_Ajax/',views.Check_User_Name_Ajax,name='Check_User_Name_Ajax'),
     path('save_user/',views.save_user,name='save_user'),
 ]

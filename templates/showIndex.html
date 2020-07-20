@@ -1,18 +1,8 @@
+{% load static %}
 <html>
     <head>
-        <script>
-            function Check()
-            {
-                var name = document.getElementById("one").value;
-                alert(name)
-                var parm = ("name="+name);
-                var  requestt = new XMLHttpRequest();
-                //requestt.onreadystatechange = Checkname;
-                requestt.open("POST","http://127.0.0.1:8000/save_user/",true);
-                requestt.send(parm);
+        <script src="{% static 'js/ajax_validations.js' %}">
 
-
-            }
         </script> 
 
     </head>
@@ -22,7 +12,8 @@
         <table align="center" border="2" class="ta">
             <tr>
                 <th>
-                    <input type="text"  placeholder="Name" onblur="Check()" id="one" name="n1" required>
+                    <input type="text"  placeholder="Name" onblur="usernameValidation()" id="userna" name="n1" required>
+                    <span id="usspan"></span>
                 </th>
             </tr>
             <tr>
@@ -37,7 +28,7 @@
             </tr>
             <tr>
                 <th>
-                    <button type="submit">save</button>
+                    <button type="submit" id="bt1">save</button>
                 </th>
             </tr>
         </table>
